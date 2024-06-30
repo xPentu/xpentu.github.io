@@ -1,0 +1,149 @@
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('dark-overlay.png');
+    mix-blend-mode: multiply;
+    z-index: -1;
+    animation: flicker 0.1s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.creepy-text {
+    font-size: 28px;
+    margin-top: 20px;
+    animation: eerieText 2s infinite alternate;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+    color: #ff0000;
+}
+
+@keyframes eerieText {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(3px);
+        opacity: 0.8;
+    }
+}
+.spooky-image {
+    opacity: 0.7;
+    filter: grayscale(100%) contrast(150%) brightness(70%);
+    animation: flickerImage 0.3s infinite;
+}
+
+@keyframes flickerImage {
+    0% {
+        opacity: 0.7;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    15% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.7;
+    }
+    95% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    85% {
+        opacity: 0.5;
+    }
+}
+
+/* Add a delay between flicker cycles */
+.spooky-image::before {
+    content: "";
+    animation: flickerDelay 1s infinite;
+}
+
+@keyframes flickerDelay {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Create random glitches */
+.glitch {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0.8;
+    animation: glitchAnimation 0.2s infinite;
+}
+
+@keyframes glitchAnimation {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(2px, -1px);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+    }
+    75% {
+        transform: translate(1px, -2px);
+    }
+}
+
+/* Apply glitch effect to the main text */
+.glitch-text {
+    position: relative;
+    font-size: 28px;
+    margin-top: 20px;
+    animation: glitchText 0.1s infinite alternate;
+	text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+}
+
+@keyframes glitchText {
+    0%, 100% {
+        transform: none;
+    }
+    5% {
+        transform: skewX(-5deg);
+    }
+    10% {
+        transform: skewX(5deg);
+    }
+}
+/* ... (buttoner) ... */
+button#moreButton {
+    background-color: #333; /* Background color for the button */
+    color: #fff; /* Text color for the button */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Transition for fading effect */
+}
+
+button#moreButton:hover {
+    background-color: #555; /* Change background color on hover if needed */
+}
+

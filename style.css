@@ -1,0 +1,63 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.spooky-image {
+    max-width: 100%; /* Limit the width to the container's width */
+    height: auto; /* Maintain the image's aspect ratio */
+}
+.creepy-text {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Style for the language switcher */
+.language-options {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Ensure it appears above other content */
+}
+
+.language-link {
+    text-decoration: none;
+}
+
+.language-icon {
+    width: 30px; /* Set the desired width */
+    height: 30px; /* Set the desired height */
+    border-radius: 50%;
+    border: 1px solid #fff;
+    padding: 5px;
+    background-color: #000;
+}
+#moreButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#moreButton.show {
+    display: block;
+    opacity: 1;
+}
